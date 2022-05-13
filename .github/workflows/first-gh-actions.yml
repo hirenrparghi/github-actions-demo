@@ -20,6 +20,16 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '12.x'
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -46,17 +56,5 @@ jobs:
           docker version
 
 
-      # Run shell script using NodeJS
-        steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '12.x'
-      - run: npm install
-      - run: npm run build --if-present
-      - run: npm test
-       
-          
-
+    
           
