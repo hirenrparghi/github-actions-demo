@@ -44,20 +44,19 @@ jobs:
           git version
           echo docker installed?
           docker version
-          
+
 
       # Run shell script using NodeJS
-      - name: Run a multi-line script
-        run: |
-          const { exec } = require('child_process');
-          var yourscript = exec('sh myscript.sh',
-          (error, stdout, stderr) => {
-          console.log(stdout);
-          console.log(stderr);
-          if (error !== null) {
-          console.log(`exec error: ${error}`);
-            }
-        });
+        steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '12.x'
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
+       
           
 
           
