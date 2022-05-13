@@ -44,7 +44,20 @@ jobs:
           git version
           echo docker installed?
           docker version
-          echo asking the OS name?
-          cat /etc/os-release
+          
+
+      # Run shell script using NodeJS
+      - name: Run a multi-line script
+        run: |
+          const { exec } = require('child_process');
+          var yourscript = exec('sh myscript.sh',
+          (error, stdout, stderr) => {
+          console.log(stdout);
+          console.log(stderr);
+          if (error !== null) {
+          console.log(`exec error: ${error}`);
+            }
+        });
+          
 
           
