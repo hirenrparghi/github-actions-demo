@@ -4,7 +4,7 @@ This repository contains the stuffs related to GitHub Actions. I just recently s
 
 ## CI/CD Basics
 
-* CI : Continuous Integration: 
+* CI : Continuous Integration   : 
     * automating the repetitive works by running a workflow in CI server (pre set) on every(or choosed) commit in respective git repo.
     * commit changes --> git repo --> CI server --> Success/Fail.
     * through CI/CD issues (small!) can be detected before merging them into the master.
