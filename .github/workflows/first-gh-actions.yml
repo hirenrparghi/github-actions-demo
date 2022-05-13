@@ -44,5 +44,7 @@ jobs:
           git version
           echo docker installed?
           docker version
+          echo asking the OS name?
+          cat /etc/os-release
 
           
