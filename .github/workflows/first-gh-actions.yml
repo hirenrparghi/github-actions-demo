@@ -46,7 +46,7 @@ jobs:
           docker version
 jobs:
   deploy:
-    name: Deploy
+    name: Deployy
     runs-on: ubuntu-latest
     environment: production
           
